@@ -1,0 +1,10 @@
+{
+  "canisters": {
+    "FundM3": {
+      "type": "azle",
+      "main": "src/index.ts",
+      "candid": "src/index.did",
+      "root": "src"
+    }
+  }
+}

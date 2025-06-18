@@ -1,0 +1,22 @@
+{
+    "scripts": {
+        "pretest": "tsx test/pretest.ts",
+        "test": "jest",
+        "start": "dfx start --background --clean",
+        "deploy": "dfx deploy"
+    },
+    "dependencies": {
+        "@dfinity/agent": "^2.4.1",
+        "@dfinity/candid": "^2.4.1",
+        "azle": "^0.31.0",
+        "uuid": "^11.1.0"
+    },
+    "devDependencies": {
+        "@types/uuid": "^10.0.0",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.3.2"
+    },
+    "engines": {
+        "node": "^20 || ^22"
+    }
+}
