@@ -1,4 +1,11 @@
 service: () -> {
-    getMessage: () -> (text) query;
-    setMessage: (text) -> ();
+    createCampaign: (text, text, nat64, principal) -> (record {id:principal; title:text; goalAmount:nat64; isFulfilled:bool; userId:principal; createdAt:nat64; description:text; contributors:vec principal; amountRaised:nat64});
+    createUser: (text) -> (record {id:principal; username:text; createdAt:nat64; campaignIds:vec principal});
+    deleteUser: (principal) -> (record {id:principal; username:text; createdAt:nat64; campaignIds:vec principal});
+    deletecampaign: (principal) -> (record {id:principal; title:text; goalAmount:nat64; isFulfilled:bool; userId:principal; createdAt:nat64; description:text; contributors:vec principal; amountRaised:nat64});
+    donateToCampaign: (principal, nat64) -> (opt record {id:principal; title:text; goalAmount:nat64; isFulfilled:bool; userId:principal; createdAt:nat64; description:text; contributors:vec principal; amountRaised:nat64});
+    getCampaignById: (principal) -> (opt record {id:principal; title:text; goalAmount:nat64; isFulfilled:bool; userId:principal; createdAt:nat64; description:text; contributors:vec principal; amountRaised:nat64}) query;
+    getCampaignDetails: (principal) -> (opt record {id:principal; title:text; goalAmount:nat64; isFulfilled:bool; userId:principal; createdAt:nat64; description:text; contributors:vec principal; amountRaised:nat64}) query;
+    getCampaigns: () -> (vec record {id:principal; title:text; goalAmount:nat64; isFulfilled:bool; userId:principal; createdAt:nat64; description:text; contributors:vec principal; amountRaised:nat64}) query;
+    readUserById: (principal) -> (opt record {id:principal; username:text; createdAt:nat64; campaignIds:vec principal}) query;
 }
